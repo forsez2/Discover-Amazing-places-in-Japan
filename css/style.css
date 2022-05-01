@@ -121,7 +121,7 @@ img {
 .header__link {
     font-size: 18px;
     line-height: 24px;
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -144,6 +144,7 @@ img {
     background: url(../img/Hero.jpg) no-repeat center;
     background-size: cover;
     padding-top: 263px;
+    padding-bottom: 233px;
 
 }
 
@@ -155,13 +156,13 @@ img {
     font-weight: 500;
     font-size: 50px;
     line-height: 60px;
-    color: #fff;
+    color: rgb(255, 255, 255);
 
 }
 
 .intro__subtitle {
     max-width: 546px;
-    color: #fff;
+    color: rgb(255, 253, 253);
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 59px;
@@ -227,7 +228,7 @@ input {
 /*Start benefits*/
 
 .benefits {
-    margin-bottom: 131px;
+    margin-bottom: 100px; /* 131px DEFOLT NUSTAVE */
 }
 
 .benefits__wrap {
@@ -309,6 +310,10 @@ input {
 
 /* Places start */
 
+.places {
+    margin-bottom: 131px;
+}
+
 .places__caption {
     display: flex;
     flex-wrap: wrap;
@@ -343,6 +348,7 @@ input {
 
 .places__card {
     position: relative;
+    overflow: hidden;
 }
 
 .places__card::after {
@@ -357,45 +363,51 @@ input {
     z-index: 2;
 }
 
-.places__card-title {
+.places__card:hover .places__card-pic {
+    transform: scale(1.05);
+} /* Чтобы не вылазило за границы - идем в place__card и ставим overflow: hidden; */
+
+.places__card-title { /* //Изображение не ростягивается на всю длину контейнера / Как исправить(ответ есть) - Можно изображения выравнять через фотошоп НО мы сейчас работаем с object-fit: cover ... Нужно поставить Width 100% в параметрах картинки */
     color: rgb(255, 255, 255);
     font-size: 50px;
     line-height: 60px;
     position: absolute;
-    z-index: 3;
+    bottom: 27px;
+    left: 29px;
+    z-index: 3; 
 }
 
-.places__card-size-lg{ /* Это модификатор для картинок в places */
+.places__card-size-lg{ /* Это модификатор для картинок в places (ВЕРХНИХ)*/
     grid-column: span 3;
 }
 
+.places__card-size-sm{ /* Это модификатор для картинок в places (НИЖНИХ)*/
+    grid-column: span 2;
+}
+
 .places__card-pic {
+    width: 100%;
+    transition: .7s; /* Для плавного transform: scale; (361 list) */
+}
+
+.places__card-pic_size_lg {
     height: 354px;
     object-fit: cover; /* ???!!!! */
 }
+
+.places__card-pic_size_sm {
+    height: 283px;
+    object-fit: cover; /* ???!!!! */
+}
+
+.places__card-link{ /* Это очевидно(ссылка на всей высоте шырине фото) */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
 /* places end */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
