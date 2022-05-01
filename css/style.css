@@ -52,10 +52,26 @@ body {
     color: #102746;
 }
 
+img {
+    max-width: 100%;
+    height: auto; /*Сжатие всегда пропорцыонально по высоте*/
+}
+
 .wrapper {
     max-width: 1060px;
     /*1060*/
     margin: 0 auto;
+}
+
+.wrapper-full {
+    max-width: 1262px;
+    margin: 0 auto;
+}
+
+.section__title {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
 }
 
 /* header style start */
@@ -104,10 +120,14 @@ body {
 
 /* header style end */
 
+/*////////////////////////////////////*/
+/*////////////////////////////////////*/
+/*////////////////////////////////////*/
+
 /* intro style start */
 
 .intro {
-    min-height: 100vh;
+    min-height: 100vh; /*Вместо height*/
     background: url(../img/Hero.jpg) no-repeat center;
     background-size: cover;
     padding-top: 263px;
@@ -141,7 +161,7 @@ body {
 
 .search-form__field {
     width: 297px;
-    background: transparent url(../img/svg/circle-icon.svg) no-repeat left 3px;
+    background: transparent url(../img/svg/circle-icon.svg) no-repeat left 3px; /*6px*/
     background-size: 20px;
     border: none;
     border-bottom: 1px solid #ffffff;
@@ -185,23 +205,105 @@ input {
     font-family: Lato;
     outline: none !important;
 }
+/* intro style утв */
 
-.benefits__wrap {
-    max-width: 1262px;
-    background-color: rgb(255, 255, 255);
-    margin: 0 auto /*Выравнивание по центру */
+/*//////////////////////////////////////*/
+/*//////////////////////////////////////*/
+/*//////////////////////////////////////*/
+
+/*Start benefits*/
+
+.benefits {
+    margin-bottom: 131px;
 }
 
-/* intro style start */
+.benefits__wrap {
+    /* min-width: 1262px; ////////////Вернуть*/
+    background-color: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    /* position: relative;  //////////Вернуть */
+}
 
-/* second background start */
+.benefits__title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    /* identical to box height */
+    padding: 93px 100px 88px 100px; /*Справа и слева отступы 100 px*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    background-color: #fff;
+}
+
+.benefits__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 55px;
+    padding: 0 100px;
+    
+    
+    margin-top: 75px;
+}
+
+.benefits__card {
+    grid-column: span 1;
+    margin-bottom: 112px;
+}
+
+.benefits__card-pic {
+    margin-bottom: 37px;
+    max-width: 66px;
+}
+
+.benefits__card-thumb {
+    display: block;
+}
+
+.benefits__card-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 26px;
+}
+
+.benefits__card-desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 39px;
+}
+
+.benefits__card-more {
+    display: inline-block;
+    padding-right: 59px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #006DFE;
+    text-decoration: none;
+    background: url(../img/svg/arrow.svg) no-repeat 95% center;
+    transition: .2s all;
+    /* background-size: 33px; bcg не трогать /Стрелка будет по умолчанию в своих стандартных размерах */ 
+}
+
+.benefits__card-more:hover, .benefits__card-more:focus {
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+}
+
+/*End benefits*/
+
+/* /////////////////////////////////////////// */
+
+/* Places start */
 
 
-/* second background end */
 
 
 
 
+/* places end */
 
 
 

@@ -1,1 +1,1 @@
-prompt('js work')
+//prompt('js work')
