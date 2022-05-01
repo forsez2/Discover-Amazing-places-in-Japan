@@ -68,10 +68,23 @@ img {
     margin: 0 auto;
 }
 
-.section__title {
+.section__title { /* Для визуальной идентичности всех тайтлов восле основного класса */
     font-weight: 500;
     font-size: 35px;
     line-height: 42px;
+    position: relative; /*???What is it?*/
+    padding-bottom: 10px;
+}
+
+.section__title:after { /* У псевдоэлементов должен присутствовать пустой контент или не пустой иначе он не отобразиться */
+    display: block;
+    content: '';
+    width: 253px;
+    height: 3px;
+    background-color: #006DFE; /*Указываем цвет не бордера а бекграуна*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 /* header style start */
@@ -218,11 +231,11 @@ input {
 }
 
 .benefits__wrap {
-    /* min-width: 1262px; ////////////Вернуть*/
+    min-width: 1262px;
     background-color: #fff;
     margin: 0 auto;
     box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
-    /* position: relative;  //////////Вернуть */
+    position: relative;
 }
 
 .benefits__title {
@@ -294,15 +307,72 @@ input {
 
 /*End benefits*/
 
-/* /////////////////////////////////////////// */
-
 /* Places start */
 
+.places__caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
 
+.places__title {
+    margin-right: 15px;
+}
 
+.places__view-all {
+    font-style: 16px;
+    padding-right: 59px;
+    color: #006DFE;
+    text-decoration: none;
+    background: url(../img/svg/arrow.svg) no-repeat right center;
+    transition: .2s all;
+}
 
+.places__view-all:hover, .places__view-all:focus {
+    opacity: .65;
+}
 
+.places__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px; /* /??? Отступы между колонками наверное */
+    
+}
 
+.places__card {
+    position: relative;
+}
+
+.places__card::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(21, 24, 36, 0.4); /* Нужно спозицыонировать */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.places__card-title {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    line-height: 60px;
+    position: absolute;
+    z-index: 3;
+}
+
+.places__card-size-lg{ /* Это модификатор для картинок в places */
+    grid-column: span 3;
+}
+
+.places__card-pic {
+    height: 354px;
+    object-fit: cover; /* ???!!!! */
+}
 /* places end */
 
 
@@ -329,49 +399,3 @@ input {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* @media screen and (max-width: 1040px) {
-    body {
-        margin-left: 10%;
-    }
-    
-
-} */
-
-
-
-/*
-.footer__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
-.footer {
-    width: 100%;
-    background-color: #000;
-    top: 0;
-    left: 0;
-}
-.footer__list {
-    display: flex;
-    flex-wrap: wrap;
-}
-.footer__item {
-    margin: 5px 0 0 5px;
-}
-.footer__link {
-    color: white;
-    /*padding: 8px 0 8px 0;
-    text-decoration: none;
-}*/
