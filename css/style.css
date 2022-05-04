@@ -121,7 +121,7 @@ img {
 .header__link {
     font-size: 18px;
     line-height: 24px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
@@ -411,3 +411,14 @@ input {
 /* places end */
 
 
+/* tours start */
+
+.tours {
+    margin-bottom: 139px;
+}
+
+.tours__tour {
+    display: grid;
+}
+
+/* tours end */
