@@ -658,6 +658,7 @@ img{
         -ms-transform: translateY(-100%);
             transform: translateY(-100%);
     background-color: #fff;
+    margin-top: 50px;
 }
 
 .benefits__cards{
@@ -673,6 +674,7 @@ img{
     -ms-grid-column-span: 1;
     grid-column: span 1;
     margin-bottom: 112px;
+    margin-top: 55px;
 }
 
 .benefits__card-pic{
